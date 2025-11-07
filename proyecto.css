@@ -127,3 +127,7 @@ header {
     flex-direction: column;
   }
 }
+
+#img2 {
+  width: 50%;
+}
