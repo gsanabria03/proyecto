@@ -131,3 +131,41 @@ header {
 #img2 {
   width: 50%;
 }
+
+
+/* ======== MODO OSCURO AUTOMÁTICO ======== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0A1D37;
+    color: #F4F6F8;
+  }
+
+  header {
+    background-color: #121B2E;
+    color: #F4F6F8;
+  }
+
+  nav ul {
+    background-color: #D4AF37;
+  }
+
+  nav ul li.active {
+    background-color: #0A1D37;
+    color: #D4AF37;
+  }
+
+  .tab-content {
+    background-color: #182544;
+    color: #EAEAEA;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  footer {
+    background-color: #121B2E;
+    color: #F4F6F8;
+  }
+
+  .image-container img {
+    border: 2px solid #D4AF37;
+  }
+}
