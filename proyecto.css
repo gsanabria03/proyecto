@@ -1,0 +1,137 @@
+/* ---------- ESTILOS PRINCIPALES ---------- */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F4F6F8;
+  color: #0A1D37; 
+} 
+
+/* ---------- CONTENIDO ---------- */ 
+.tab-content p { 
+  line-height: 1.6;
+  font-size: 1.05rem; 
+  color: #333;
+}
+
+@keyframes fade {
+  from {
+  opacity: 0;
+  transform: translateY(10px);
+} 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } } 
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0A1D37;
+  color: white;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+} 
+
+
+/* ---------- AJUSTES MÓVILES ---------- */ 
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  } 
+  
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  } 
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 1rem;
+  } 
+  
+  
+  /* Oculta el menú al hacer scroll para que no tape el contenido */ 
+  
+  header {
+    position: sticky;
+    top: 0;
+  } 
+  
+  main {
+    margin-top: 160px;
+    padding: 1rem;
+  } 
+  
+  .tab-content {
+    padding: 1.5rem;
+    max-width: 100%;
+  } 
+  
+  .tab-content h2 {
+    font-size: 1.2rem;
+  } 
+  
+  .tab-content p {
+    font-size: 0.95rem;
+  } 
+  
+  .image-container img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+  } } 
+
+
+/* Ajuste para que el contenido no quede oculto por el header en móvil */ 
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 200px;
+    
+    /* subir más para compensar el header */ 
+  } } 
+
+
+/* Mejor control para las imágenes */ 
+
+.image-container img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+
+/* Asegurar que el header no oculte contenido al hacer scroll */ 
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+} 
+
+
+/* Si quieres que en móvil el menú se colapse o desaparezca al bajar */ 
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* ocultar menú por defecto */ 
+  } 
+  
+  header.show-nav nav ul {
+    display: flex;/* mostrar cuando tenga clase .show-nav */ 
+    flex-direction: column; 
+  } }
