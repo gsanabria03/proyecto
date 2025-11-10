@@ -196,3 +196,24 @@ header {
     border: 2px solid #D4AF37;
   }
 }
+@media (prefers-color-scheme: dark) {
+  nav ul {
+    background-color: #121B2E;
+  }
+
+  nav ul li {
+    color: #F4F6F8;
+  }
+
+  nav ul li:hover {
+    background-color: #D4AF37;
+    color: #121B2E;
+  }
+
+  nav ul li.active {
+    background-color: #D4AF37;
+    color: #121B2E;
+    border: 2px solid #F4F6F8;
+  }
+}
+
