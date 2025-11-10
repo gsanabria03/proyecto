@@ -245,6 +245,11 @@ footer {
 
 /* Mostrar menú hamburguesa solo en móvil */
 @media (max-width: 768px) {
+
+  #img2 {
+  width: 70%;
+  }
+  
   header {
     position: fixed;
     top: 0;
