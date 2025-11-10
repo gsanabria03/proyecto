@@ -286,3 +286,15 @@ header {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .tab-content p {
+    color: #EAEAEA;
+  }
+
+  .tab-content h2,
+  .tab-content h3 {
+    color: #FFD966; /* dorado suave */
+  }
+}
+
+
