@@ -217,12 +217,38 @@ header {
 
 /* Si quieres que en móvil el menú se colapse o desaparezca al bajar */
 @media (max-width: 768px) {
-  nav ul { display: none; }
-  header.show-nav nav ul {
-    display: flex;
+  nav ul {
+    display: flex; /* antes decía none */
     flex-direction: column;
+    align-items: center;
+    background-color: #D4AF37;
+    padding: 0.5rem;
+    box-shadow: none;
+  }
+
+  nav ul li {
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.4rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid #D4AF37;
+  }
+
+  nav ul li.active {
+    background-color: #D4AF37;
+    color: #0A1D37;
+    border: 2px solid #0A1D37;
+  }
+
+  nav ul li:hover {
+    background-color: #b9962e;
+    color: white;
   }
 }
+
 
 #img2 {
   width: 50%;
