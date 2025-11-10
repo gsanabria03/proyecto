@@ -24,5 +24,20 @@ tabs.forEach(tab => {
       content.classList.remove('active');
       if (content.id === target) content.classList.add('active');
     });
+    // ====== MENÚ DESPLEGABLE MÓVIL ======
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('nav ul');
+
+// Mostrar / ocultar menú al tocar el botón
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
+
+// Ocultar menú automáticamente al seleccionar un tab
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    nav.classList.remove('show');
+  });
+});
   });
 });
