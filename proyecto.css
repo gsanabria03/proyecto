@@ -232,21 +232,34 @@ footer {
 /* ====== MENÚ HAMBURGUESA (SOLO MÓVIL) ====== */
 .menu-toggle {
   display: none; /* oculto en PC */
-  position: fixed;       /* antes absolute → ahora fixed para que no se desplace ni se corte */
+  position: fixed;
   right: 1rem;
-  top: 1rem;
+  top: 1.2rem;
   background: none;
   border: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
-  z-index: 1001;         /* más alto que el header */
+  z-index: 1001;
 }
 
 /* Mostrar menú hamburguesa solo en móvil */
 @media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  /* 🔹 mover el botón un poco más abajo para que no se sobreponga con el título */
   .menu-toggle {
     display: block;
+    top: 1.5rem; /* antes 1rem */
+    right: 1rem;
   }
 
   nav ul {
@@ -255,12 +268,12 @@ footer {
     align-items: center;
     background-color: #D4AF37;
     position: fixed;
-    top: 60px;             /* justo debajo del header */
+    top: 70px; /* justo debajo del header */
     left: 0;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 1rem 0;
-    z-index: 1000;
+    z-index: 998;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -280,14 +293,17 @@ footer {
     }
   }
 
+  /* 🔹 Mejora de visibilidad de las opciones del menú */
   nav ul li {
     width: 90%;
     text-align: center;
     margin: 0.5rem 0;
-    background-color: white;
+    background-color: #fff; /* fondo blanco */
+    color: #000; /* texto negro para mejor contraste */
     padding: 1rem;
     border-radius: 10px;
     border: 1px solid #D4AF37;
+    font-weight: 600;
   }
 
   nav ul li.active {
@@ -304,6 +320,7 @@ footer {
     margin-top: 100px;
   }
 }
+
 @media (max-width: 768px) {
   img{
     width:50%;
