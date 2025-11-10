@@ -231,18 +231,19 @@ footer {
 }
 /* ====== MENÚ HAMBURGUESA (SOLO MÓVIL) ====== */
 .menu-toggle {
-  display: none;
-  position: absolute;
+  display: none; /* oculto en PC */
+  position: fixed;       /* antes absolute → ahora fixed para que no se desplace ni se corte */
   right: 1rem;
-  top: 1.2rem;
+  top: 1rem;
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001;         /* más alto que el header */
 }
 
+/* Mostrar menú hamburguesa solo en móvil */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -253,16 +254,30 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: #D4AF37;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;             /* justo debajo del header */
     left: 0;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 1rem 0;
+    z-index: 1000;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
   }
 
   nav ul.show {
     display: flex;
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   nav ul li {
@@ -286,7 +301,8 @@ footer {
   }
 
   main {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 }
+
 
