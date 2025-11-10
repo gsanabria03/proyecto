@@ -14,10 +14,12 @@ header {
 }
 
 /* ---------- MENÚ DE NAVEGACIÓN (TABS) ---------- */
+/* ---------- MENÚ DE NAVEGACIÓN (TABS) ---------- */
 nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -26,10 +28,10 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1.1rem; /* más grande */
+  font-size: 1.1rem;
   letter-spacing: 0.5px;
   color: #0A1D37;
   background-color: transparent;
@@ -37,6 +39,54 @@ nav ul li {
   border-radius: 10px;
   transition: all 0.3s ease;
 }
+
+nav ul li:hover {
+  background-color: #b9962e;
+  color: white;
+  transform: scale(1.05);
+}
+
+nav ul li.active {
+  background-color: white;
+  color: #0A1D37;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 0.9rem 1.6rem;
+}
+
+/* ---------- AJUSTES MÓVILES ---------- */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  nav ul li {
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.4rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid #D4AF37;
+  }
+
+  nav ul li.active {
+    background-color: #D4AF37;
+    color: #0A1D37;
+    border: 2px solid #0A1D37;
+  }
+
+  nav ul li:hover {
+    background-color: #b9962e;
+    color: white;
+    transform: none;
+  }
+}
+
 
 /* Hover (cuando pasás el mouse por encima) */
 nav ul li:hover {
