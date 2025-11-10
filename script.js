@@ -1,9 +1,9 @@
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.tab-content');
-
-let lastScrollTop = 0;
 const header = document.querySelector('header');
+let lastScrollTop = 0;
 
+// ====== Mostrar/Ocultar header al hacer scroll ======
 window.addEventListener('scroll', () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > lastScrollTop) {
@@ -14,6 +14,7 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
+// ====== Tabs ======
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -24,20 +25,17 @@ tabs.forEach(tab => {
       content.classList.remove('active');
       if (content.id === target) content.classList.add('active');
     });
-    // ====== MENÚ DESPLEGABLE MÓVIL ======
+
+    // Cierra el menú cuando se elige un tab (mobile)
+    nav.classList.remove('show');
+  });
+});
+
+// ====== MENÚ DESPLEGABLE MÓVIL ======
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.querySelector('nav ul');
 
 // Mostrar / ocultar menú al tocar el botón
 menuToggle.addEventListener('click', () => {
   nav.classList.toggle('show');
-});
-
-// Ocultar menú automáticamente al seleccionar un tab
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    nav.classList.remove('show');
-  });
-});
-  });
 });
