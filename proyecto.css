@@ -11,9 +11,13 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
 }
 
-/* ---------- MENÚ DE NAVEGACIÓN (TABS) ---------- */
 /* ---------- MENÚ DE NAVEGACIÓN (TABS) ---------- */
 nav ul {
   display: flex;
@@ -55,12 +59,77 @@ nav ul li.active {
   padding: 0.9rem 1.6rem;
 }
 
+/* ---------- CONTENIDO ---------- */
+main {
+  margin-top: 200px; /* evita que el header tape el texto */
+  padding: 2rem;
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+  animation: fade 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content p {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
+}
+
+.tab-content h2,
+.tab-content h3 {
+  color: #0A1D37;
+  margin-bottom: 1rem;
+}
+
+.image-container img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0A1D37;
+  color: white;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+#img2 {
+  width: 50%;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- AJUSTES MÓVILES ---------- */
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+
   nav ul {
     flex-direction: column;
     align-items: center;
     box-shadow: none;
+    background-color: #D4AF37;
+    padding: 0.5rem;
   }
 
   nav ul li {
@@ -85,175 +154,25 @@ nav ul li.active {
     color: white;
     transform: none;
   }
-}
 
-
-/* Hover (cuando pasás el mouse por encima) */
-nav ul li:hover {
-  background-color: #b9962e;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Tab activo */
-nav ul li.active {
-  background-color: white;
-  color: #0A1D37;
-  border: 2px solid #D4AF37;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  padding: 0.9rem 1.6rem;
-}
-
-.tab-content {
-  display: none;
-  padding: 2rem;
-  animation: fade 0.3s ease-in-out;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-
-/* ---------- CONTENIDO ---------- */
-.tab-content p {
-  line-height: 1.6;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #0A1D37;
-  color: white;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-}
-
-/* ---------- AJUSTES MÓVILES ---------- */
-@media (max-width: 768px) {
-  header h1 { font-size: 1.1rem; padding: 0.5rem; }
-
-  nav ul {
-    flex-direction: column;
-    align-items: stretch;
+  main {
+    margin-top: 220px; /* más espacio para que no tape el menú */
+    padding: 1rem;
   }
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
-    padding: 0.8rem;
-    font-size: 1rem;
+  .tab-content {
+    padding: 1.5rem;
+    max-width: 100%;
   }
 
-  header { position: sticky; top: 0; }
-
-  main { margin-top: 160px; padding: 1rem; }
-
-  .tab-content { padding: 1.5rem; max-width: 100%; }
-
-  .tab-content h2 { font-size: 1.2rem; }
+  .tab-content h2 {
+    font-size: 1.2rem;
+  }
 
   .tab-content p {
-  line-height: 1.8;
-  font-size: 1.15rem;
-  color: #1a1a1a; /* gris oscuro casi negro */
-  letter-spacing: 0.3px;
-}
-
-.tab-content h2,
-.tab-content h3 {
-  color: #0A1D37; /* azul oscuro principal */
-  margin-bottom: 1rem;
-}
-
-body {
-  background-color: #F4F6F8;
-  color: #0A1D37;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-
-  .image-container img {
-    width: 60%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    font-size: 0.95rem;
   }
 }
-
-/* Ajuste para que el contenido no quede oculto por el header en móvil */
-@media (max-width: 768px) {
-  main { margin-top: 200px; }
-}
-
-/* Mejor control para las imágenes */
-.image-container img {
-  width: 60%;
-  height: auto;
-  object-fit: contain;
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Asegurar que el header no oculte contenido al hacer scroll */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-}
-
-/* Si quieres que en móvil el menú se colapse o desaparezca al bajar */
-@media (max-width: 768px) {
-  nav ul {
-    display: flex; /* antes decía none */
-    flex-direction: column;
-    align-items: center;
-    background-color: #D4AF37;
-    padding: 0.5rem;
-    box-shadow: none;
-  }
-
-  nav ul li {
-    width: 90%;
-    text-align: center;
-    font-size: 1rem;
-    margin: 0.4rem 0;
-    padding: 1rem;
-    border-radius: 12px;
-    background-color: white;
-    border: 1px solid #D4AF37;
-  }
-
-  nav ul li.active {
-    background-color: #D4AF37;
-    color: #0A1D37;
-    border: 2px solid #0A1D37;
-  }
-
-  nav ul li:hover {
-    background-color: #b9962e;
-    color: white;
-  }
-}
-
-
-#img2 {
-  width: 50%;
-}
-
 
 /* ======== MODO OSCURO AUTOMÁTICO ======== */
 @media (prefers-color-scheme: dark) {
@@ -267,31 +186,6 @@ header {
     color: #F4F6F8;
   }
 
-  nav ul {
-    background-color: #D4AF37;
-  }
-
-  nav ul li.active {
-    background-color: #0A1D37;
-    color: #D4AF37;
-  }
-
-  .tab-content {
-    background-color: #182544;
-    color: #EAEAEA;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  }
-
-  footer {
-    background-color: #121B2E;
-    color: #F4F6F8;
-  }
-
-  .image-container img {
-    border: 2px solid #D4AF37;
-  }
-}
-@media (prefers-color-scheme: dark) {
   nav ul {
     background-color: #121B2E;
   }
@@ -310,17 +204,28 @@ header {
     color: #121B2E;
     border: 2px solid #F4F6F8;
   }
-}
 
-@media (prefers-color-scheme: dark) {
+  .tab-content {
+    background-color: #182544;
+    color: #EAEAEA;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
   .tab-content p {
     color: #EAEAEA;
   }
 
   .tab-content h2,
   .tab-content h3 {
-    color: #FFD966; /* dorado suave */
+    color: #FFD966;
+  }
+
+  footer {
+    background-color: #121B2E;
+    color: #F4F6F8;
+  }
+
+  .image-container img {
+    border: 2px solid #D4AF37;
   }
 }
-
-
