@@ -161,7 +161,26 @@ footer {
 
   .tab-content h2 { font-size: 1.2rem; }
 
-  .tab-content p { font-size: 0.95rem; }
+  .tab-content p {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  color: #1a1a1a; /* gris oscuro casi negro */
+  letter-spacing: 0.3px;
+}
+
+.tab-content h2,
+.tab-content h3 {
+  color: #0A1D37; /* azul oscuro principal */
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: #F4F6F8;
+  color: #0A1D37;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
 
   .image-container img {
     width: 60%;
